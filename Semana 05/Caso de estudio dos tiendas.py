@@ -31,7 +31,6 @@ print(total_norte)
 print(porcentaje_norte)
 # TODO: repite los indicadores para Norte.
 
-
 # TODO: decide si cada tienda superó, igualó o no alcanzó su meta.
 
 if total_centro > meta_centro:
@@ -48,7 +47,6 @@ elif total_norte == meta_norte:
     estado_norte = "meta alcanzada"
 else:
     estado_norte = "meta no alcanzada"
-
 
 # TODO: presenta un reporte con etiquetas claras y f-strings.
 if total_centro > total_norte:
