@@ -103,4 +103,38 @@ Otros casos para probar:
 
 
 # Desarrolle su solución a partir de esta línea.
-print("Hola mundo")
+CAPACIDAD_MAXIMA = 700
+#lista control
+grupos_aceptados = []
+grupos_rechazados = []
+ocupacion_actual = 0
+espacios_disponibles = CAPACIDAD_MAXIMA - ocupacion_actual
+
+#
+print("Control de ingreso al Anfiteatro del CENAC")
+print(f"Capacidad del escenario: {CAPACIDAD_MAXIMA} personas")
+print("Escriba \"fin\" para cerrar el ingreso.")
+
+
+#entradas
+entrada = input("Ingrese la cantidad de personas del grupo: ")
+while entrada != "fin":
+    try:
+        grupo = int(entrada)
+        if grupo <= 0:
+            print("Entrada inválida: debe ser un entero mayor que cero.")
+        else:
+            if ocupacion_actual + grupo <= CAPACIDAD_MAXIMA:
+                grupos_aceptados.append(grupo)
+                ocupacion_actual += grupo
+                print(f"Grupo aceptado: ingresan {grupo} personas.")
+            else:
+                grupos_rechazados.append(grupo)
+                print(f"Grupo rechazado: no hay espacio para {grupo} personas.")
+            espacios_disponibles = CAPACIDAD_MAXIMA - ocupacion_actual
+            print(f"Ocupación actual: {ocupacion_actual}")
+            print(f"Espacios disponibles: {espacios_disponibles}")
+    except ValueError:
+        print("Entrada inválida: debe ser un número entero o 'fin'.")
+    
+    entrada = input("Ingrese la cantidad de personas del grupo: ")
